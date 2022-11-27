@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿string result = String.Empty;
+
+string[] marks = { "троечник", "ударник", "отличник" };
+for (int i = 0; i < 100; i++)
+{
+  string fname = $"Имя_{i}";
+  string lname = $"Фамилия_{i}";
+  int id = i;
+  string mark = marks[new Random().Next(marks.Length)];
+  result += $"{id}; {fname}; {lname}; {mark};\n";
+}
+//Console.WriteLine($"{result}");
+File.WriteAllText("db.csv", result);
